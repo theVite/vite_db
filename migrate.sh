@@ -37,7 +37,7 @@ fi
 for migration_file in $(ls -v $ROOT/migrations); do
     MIGRATION_VERSION=$(echo $migration_file | cut -d. -f1)
 
-    if [ -n "$DEST_VERSION" ] && [["$MIGRATION_VERSION" > "$DEST_VERSION" ]]; then break; fi
+    if [ -n "$DEST_VERSION" ] && [[ "$MIGRATION_VERSION" > "$DEST_VERSION" ]]; then break; fi
 
     if [[ "$MIGRATION_VERSION" > "$SOURCE_VERSION" ]]; then
        echo "Running migration: $migration_file"
